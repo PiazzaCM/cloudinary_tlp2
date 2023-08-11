@@ -18,8 +18,8 @@ router.get('/vistaindex', (req, res)=>{
 })
 
 
-router.get('/crear', (req, res)=>{
-    res.render('/create')
+router.get('/create', (req, res)=>{
+    res.render('create')
 })
 
 

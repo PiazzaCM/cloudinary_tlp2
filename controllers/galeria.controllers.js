@@ -22,7 +22,7 @@ const store = async (req, res) => {
   let uploadPath;
 
   if (!req.files || Object.keys(req.files).length === 0) {
-    return res.status(400).json({ mensaje: "No hay imagen para subir" });
+    return res.status(400).json({ mensaje: "No hay imagen cargada" });
   }
 
 
@@ -35,7 +35,7 @@ const store = async (req, res) => {
     },
   });
   if (imageExists) {
-    return res.status(400).json({ mensaje: "La imagen ya existe" });
+    return res.status(400).json({ mensaje: "Imagen existente" });
   }
 
   uploadPath = path.join(__dirname, "../files/", image.name);
@@ -71,7 +71,7 @@ const store = async (req, res) => {
     creation: created_at,
   });
 
-  return res.status(201).json({ success: "Imagen subida correctamente." });
+  return res.status(201).json({ success: "Imagen cargada." });
 };
 
 const actualizar = async (req, res) => {};
