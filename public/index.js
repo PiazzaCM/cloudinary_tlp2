@@ -1,4 +1,4 @@
-const imagesList = document.querySelector("#galleries");
+const imagesList = document.querySelector("#gallerie");
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("DOM Cargado");
@@ -15,7 +15,7 @@ const showImages = (images) => {
   if (images.length === 0) {
     imagesList.innerHTML = `
           <p>
-              <span class="text-center">No hay imagenes aún.</span>
+              <span class="text-center">No hay imagenes</span>
           </p>
       `;
     return;
@@ -29,7 +29,7 @@ const showImages = (images) => {
 };
 
 const fetchImages = async () => {
-  const response = await fetch("http://localhost:4000/api");
+  const response = await fetch("http://localhost:3000/api");
 
   if (response.status === 404) {
     return [];

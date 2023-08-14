@@ -13,7 +13,7 @@ const {
 const router = Router();
 
 
-router.get('/vistaindex', (req, res)=>{
+router.get('/', (req, res)=>{
     res.render('index')
 })
 
